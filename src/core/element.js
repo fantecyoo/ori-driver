@@ -47,12 +47,12 @@ export default class Element {
    * @public
    */
   isInView() {
-    let top = this.node.offsetTop;
-    let left = this.node.offsetLeft;
-    const width = this.node.offsetWidth;
-    const height = this.node.offsetHeight;
+    let el = document.querySelector(this.options.element)
 
-    let el = this.node;
+    let top = el.offsetTop;
+    let left = el.offsetLeft;
+    const width = el.offsetWidth;
+    const height = el.offsetHeight;
 
     while (el.offsetParent) {
       el = el.offsetParent;
@@ -86,18 +86,19 @@ export default class Element {
    */
   bringInView() {
     // If the node is not there or already is in view
-    if (!this.node || this.isInView()) {
-      return;
-    }
+    console.log(this.isInView)
+    // if (!this.node || this.isInView()) {
+    //   return;
+    // }
 
+    let el = document.querySelector(this.options.element)
     // If browser does not support scrollIntoView
     if (!this.node.scrollIntoView) {
       this.scrollManually();
       return;
     }
-
     try {
-      this.node.scrollIntoView(this.options.scrollIntoViewOptions || {
+      el.scrollIntoView(this.options.scrollIntoViewOptions || {
         behavior: 'instant',
         block: 'center',
       });
@@ -191,9 +192,9 @@ export default class Element {
    */
   onHighlighted() {
     const highlightedElement = this;
-    if (!highlightedElement.isInView()) {
+    // if (!highlightedElement.isInView()) {
       highlightedElement.bringInView();
-    }
+    // }
 
     // Show the popover and stage once the item has been
     // brought in the view, this would allow us to handle
