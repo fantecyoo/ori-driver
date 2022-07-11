@@ -88,7 +88,6 @@ export default class Stage extends Element {
     this.node.style.top = `${position.top - (requiredPadding / 2)}px`;
     this.node.style.left = `${position.left - (requiredPadding / 2)}px`;
     this.node.style.backgroundColor = 'transparent';
-    console.log(this.options)
     if(this.options.disableInteraction){
       this.node.style.setProperty('z-index', 100005, 'important');
       this.node.style.setProperty('box-shadow','rgb(33 33 33 / 80%) 0px 0px 1px 2px, rgb(33 33 33 / 50%) 0px 0px 0px 5000px')

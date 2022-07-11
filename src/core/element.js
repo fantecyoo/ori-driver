@@ -86,7 +86,6 @@ export default class Element {
    */
   bringInView() {
     // If the node is not there or already is in view
-    console.log(this.isInView)
     // if (!this.node || this.isInView()) {
     //   return;
     // }
