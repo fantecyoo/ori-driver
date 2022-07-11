@@ -94,6 +94,7 @@ export default class Stage extends Element {
       this.node.style.setProperty('box-shadow','rgb(33 33 33 / 80%) 0px 0px 1px 2px, rgb(33 33 33 / 50%) 0px 0px 0px 5000px')
     }else{
       this.node.style.setProperty('z-index', 100003, 'important');
+      this.node.style.setProperty('box-shadow','rgb(33 33 33 / 80%) 0px 0px 1px 2px, rgb(33 33 33 / 50%) 0px 0px 0px 5000px')
     }
   }
 }

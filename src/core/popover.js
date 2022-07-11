@@ -133,6 +133,9 @@ export default class Popover extends Element {
 
     // Position the popover around the given position
     switch (this.options.position) {
+      case 'center':
+        this.positionCenter(position)
+        break;
       case 'left':
       case 'left-top':
         this.positionOnLeft(position);
@@ -231,7 +234,13 @@ export default class Popover extends Element {
       this.nextBtnNode.innerHTML = this.options.nextBtnText;
     }
   }
-
+  positionCenter(elementPosition){
+    this.node.style.left = '50%';
+    this.node.style.top = '50%';
+    this.node.style.transform = 'translate(-50%,-50%)'
+    this.tipNode.style.display = 'none'
+    this.node.style.setProperty('box-shadow','rgb(33 33 33 / 80%) 0px 0px 1px 2px, rgb(33 33 33 / 50%) 0px 0px 0px 5000px')
+  }
   /**
    * Shows the popover on the left of the given position
    * @param {Position} elementPosition
