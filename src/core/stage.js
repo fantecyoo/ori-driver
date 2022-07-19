@@ -95,5 +95,14 @@ export default class Stage extends Element {
       this.node.style.setProperty('z-index', 100003, 'important');
       this.node.style.setProperty('box-shadow','rgb(33 33 33 / 80%) 0px 0px 1px 2px, rgb(33 33 33 / 50%) 0px 0px 0px 5000px')
     }
+    console.log(this.options)
+    if(this.options.popover.position==='center'){
+      // this.node.style.visibility = 'hidden'
+      this.node.style.setProperty('box-shadow','rgb(33 33 33 / 50%) 0px 0px 0px 5000px')
+      this.node.style.setProperty('background-color','rgb(33 33 33 / 50%)')
+    }else{
+      this.node.style.setProperty('box-shadow','rgb(33 33 33 / 80%) 0px 0px 1px 2px, rgb(33 33 33 / 50%) 0px 0px 0px 5000px')
+      this.node.style.setProperty('background-color','transparent')
+    }
   }
 }
