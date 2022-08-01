@@ -130,6 +130,9 @@ div#driver-popover-item {
       cursor: default;
       pointer-events: none;
     }
+    button.hide-button {
+      opacity: 0;
+    }
 
     .driver-close-btn {
       float: left;
